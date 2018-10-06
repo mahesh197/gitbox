@@ -1,0 +1,17 @@
+node {
+   def mvnHome
+   stage('Preparation') { // for display purposes
+      // Get some code from a GitHub repository
+      git 'https://github.com/mahesh197/gitbox.git'
+   }
+   stage('Build') {
+    echo "Building started"
+    bat "start cmd.exe /c C:\\Program Files (x86)\\Jenkins\\workspace\\batchfile.bat"
+    echo "Building done"
+   }
+   stage('Results') {
+     echo "email start....."
+     build job :"BuildJob"
+     echo "email done"
+   }
+}
