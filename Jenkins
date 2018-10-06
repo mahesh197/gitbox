@@ -6,7 +6,6 @@ node {
    }
    stage('Build') {
     echo "Building started"
-    bat "start cmd.exe /c C:\\Program Files (x86)\\Jenkins\\workspace\\batchfile.bat"
     echo "Building done"
    }
    stage('Results') {
